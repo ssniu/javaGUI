@@ -2,6 +2,7 @@ package bioinfo;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckMenuItem;
@@ -105,11 +106,12 @@ public class MainMenu extends Application {
         menuBar.getMenus().addAll(newMenu, openMenu, searchMenu, sequenceMenu, primer,help);
     
       //Bottom menu bar
-        ToggleButton tb1 = new ToggleButton("Sequence");
-    	ToggleButton tb2 = new ToggleButton("Primer");
-    	ToggleButton tb3 = new ToggleButton("Blast");
-    	ToggleButton tb4 = new ToggleButton("Enzymes");
-    	ToggleButton tb5 = new ToggleButton("Search");
+        ToggleButton tb1 = new ToggleButton("Reset");
+        ToggleButton tb2 = new ToggleButton("Search");
+    	ToggleButton tb3 = new ToggleButton("Enzymes");
+    	ToggleButton tb4 = new ToggleButton("Blast");
+    	ToggleButton tb5 = new ToggleButton("Primer");
+    	ToggleButton tb6 = new ToggleButton("Sequence");
     	
     	ToggleGroup tg = new ToggleGroup();
     	
@@ -119,6 +121,7 @@ public class MainMenu extends Application {
     	tb3.setToggleGroup(tg);
     	tb4.setToggleGroup(tg);
     	tb5.setToggleGroup(tg);
+    	tb6.setToggleGroup(tg);
     	
     	//search box the bottom
         //Text searchText = new Text("Search");
@@ -126,10 +129,13 @@ public class MainMenu extends Application {
         
         HBox h = new HBox();
         h.setPadding(new Insets(10,10,10,10));
-        h.getChildren().addAll(searchTF, tb5,tb1,tb2,tb3,tb4);
+        h.setSpacing(3);
+        h.getChildren().addAll(searchTF, tb1,tb2,tb3,tb4,tb5, tb6);
         
         TextArea des1  = new TextArea();
         TextArea des2 = new TextArea();
+        
+        //des2.setAlignment(Pos.BOTTOM);
         
         des1.setFont(new Font("Serif", 14));
         des2.setFont(new Font("Serif", 14));
@@ -138,11 +144,12 @@ public class MainMenu extends Application {
 		des1.setWrapText(true);
 		des1.setEditable(true);//read only
 		des2.setWrapText(true);
-		des2.setEditable(true);//read only
+		des2.setEditable(false);//read only
 		
 		//TextArea
 		HBox h2 = new HBox();
-        h2.setPadding(new Insets(10,10,10,10));
+        h2.setPadding(new Insets(20,15,10,10));
+        h2.setSpacing(15);
         h2.getChildren().addAll(des1,des2);
         
 

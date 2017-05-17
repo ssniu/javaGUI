@@ -12,16 +12,10 @@ import javafx.application.Application;
 
  public class CalculatorFX extends Application { 
 
-	// public static void main(String[] args) {
-	   //     launch(args);
-	   // }
-	 Calculator  c = new Calculator();
+	 
 	 public static void main(String[] args) {
 		       launch(args);
 		    }
-	 
- }
- class Calculator {
 	 
  private TextField tfAnnualInterestRate = new TextField();
  private TextField tfNumberOfYears = new TextField();
@@ -31,7 +25,6 @@ import javafx.application.Application;
  private Button btCalculate = new Button("Calculate");
 
  
- public Calculator(){
 	 
  @Override // Override the start method in the Application class
  public void start(Stage primaryStage) {
@@ -89,7 +82,7 @@ import javafx.application.Application;
   tfTotalPayment.setText(String.format("$%.2f",
   loan.getTotalPayment()));
   }
-  }}
+  }
  
  
  class Loan {
